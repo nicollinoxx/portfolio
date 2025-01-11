@@ -1,0 +1,11 @@
+// Importar Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Suas personalizações
+$container-max-widths: (
+    sm: 540px,
+    md: 600px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
