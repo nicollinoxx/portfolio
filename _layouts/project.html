@@ -14,18 +14,28 @@
     <main class="container mt-4 flex-grow-1">
       <h1>{{ page.title }}</h1>
       <p class="m-1 text-secondary">{{ page.date }}</p>
-      <i class="bi bi-link"></i> <a href="{{ page.website }}">See this project online</a> <i class="bi bi-link"></i>
 
-      <img src="{{ page.thumbnail }}" alt="thumbnail" class="img-fluid mx-auto d-block my-3">
+      {% if page.website %}
+        <div class="my-2">
+          <i class="bi bi-link"></i> <a href="{{ page.website }}">See this project online</a> <i class="bi bi-link"></i>
+        </div>
+      {% endif %}
 
-      <ul class="list-unstyled d-flex flex-wrap gap-1 mb-5">
-        <span class="p-1">Tools:</span>
-        {% for tool in page.tools %}
-          <li class="text-light bg-secondary py-1 px-2 rounded">
-            {{ tool }}
-          </li>
-        {% endfor %}
-      </ul>
+      {% if page.thumbnail %}
+        <img src="{{ page.thumbnail }}" alt="thumbnail" class="img-fluid mx-auto d-block my-3">
+      {% endif %}
+
+      {% if page.tools %}
+        <ul class="list-unstyled d-flex flex-wrap gap-1 mb-5">
+          <span class="p-1">Tools:</span>
+          {% for tool in page.tools %}
+            <li class="text-light bg-secondary py-1 px-2 rounded">
+              {{ tool }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
       <div class="my-3">
         {{ content }}
       </div>
