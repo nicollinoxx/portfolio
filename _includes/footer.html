@@ -1,3 +1,21 @@
-<footer class="text-center py-3">
-    <p>&copy; {{ site.time | date: "%Y" }}</p>
+<footer class="text-center py-4 bg-dark text-light">
+    <div class="container">
+        <p>&copy; {{ site.time | date: "%Y" }} - {{ site.name }}</p>
+
+        <p>
+            Portfolio made with <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> and <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a> tools.
+            <br>
+            <i class="bi bi-tools"></i>
+        </p>
+
+        <div class="d-flex align-items-center justify-content-between my-4">
+            <hr class="flex-grow-1 me-3">
+              <a class="link-underline-dark" href="#">Neutral Theme</a>
+            <hr class="flex-grow-1 ms-3">
+        </div>
+
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn btn-light mt-2">
+            back to top
+        </button>
+    </div>
 </footer>
