@@ -7,11 +7,11 @@
   <body>
       {% include header.html %}
 
-      <main class="text-center">
+      <main class="text-center mt-5">
         {{ content }}
 
         <div id="section-profile" class="bg-secondary text-light py-5">
-          <div class="container">
+          <div class="container mt-5">
             <img src="{{ site.avatar | relative_url }}" alt="avatar" class="rounded-circle img-fluid" style="width: 230px; height: 230px;">
             <h2 class="fw-bold my-4">{{ site.name }}</h2>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div id="section-projects" class="py-5">
-          <div class="container mt-5">
+          <div class="container mt-5 mb-2">
             <h1 class="fw-bold mb-2">Projects</h1>
 
             <div class="d-flex align-items-center justify-content-between my-2">
@@ -65,7 +65,7 @@
         </div>
 
         <div id="section-social" class="bg-secondary-subtle py-5">
-          <div class="container">
+          <div class="container mt-5 mb-2">
             <h1 class="fw-bold">Social</h1>
 
             <div class="d-flex align-items-center justify-content-between my-3">
