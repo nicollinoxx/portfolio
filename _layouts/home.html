@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     {% include head.html %}
-    <script src="/assets/js/show_more_projects.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/show_more_projects.js"></script>
   </head>
   <body>
       {% include header.html %}
@@ -47,7 +47,7 @@
             <div class="d-flex flex-wrap justify-content-center gap-4">
               {% assign sorted_projects = site.projects | sort: "date" | reverse %}
               {% for project in sorted_projects %}
-                <a href="{{ project.url }}" class="project {% if forloop.index > 3 %}d-none{% endif %}">
+                <a href="{{ site.baseurl }}{{ project.url }}" class="project {% if forloop.index > 3 %}d-none{% endif %}">
                   <div class="d-flex flex-column shadow rounded">
                     <img src="{{ project.thumbnail | relative_url }}" class="object-fit-cover img-fluid" alt="{{ project.title }}" style="width: 24rem; height: 14rem;">
                     <h1 class="h6 my-3">{{ project.title }}</h1>
