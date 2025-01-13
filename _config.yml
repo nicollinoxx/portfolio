@@ -9,12 +9,10 @@ name:   "Name"
 
 #add here the technologies and tools you use
 tools:
-  - "Ruby"
   - "Jekyll"
+  - "Ruby"
   - "Python"
   - "Lua"
-  - "Ruby on Rails"
-  - "React"
   - "Bootstrap"
   - "Tailwind"
 

@@ -4,6 +4,6 @@ title:     About
 permalink: /about/
 ---
 
-# Title 1
+# About
 
 On this page you can describe something cool about yourself.
