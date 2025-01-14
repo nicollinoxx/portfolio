@@ -3,7 +3,11 @@
   <head>
     {% include head.html %}
   </head>
-  <body>
+  <body class="{% if page.layout != 'home' %}d-flex flex-column vh-100{% endif %}">
+    {% include header.html %}
+
     {{ content }}
+
+    {% include footer.html %}
   </body>
 </html>

@@ -1,111 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% include head.html %}
-    <script src="{{ site.baseurl }}/assets/js/show_more_projects.js"></script>
-  </head>
-  <body>
-      {% include header.html %}
+---
+layout: default
+---
 
-      <main class="text-center mt-5">
-        {{ content }}
+<main class="text-center">
+  <div id="section-profile" class="bg-secondary text-light py-5">
+    <div class="container mt-5">
+      <img src="{{ site.avatar | relative_url }}" alt="avatar" class="rounded-circle img-fluid" style="width: 230px; height: 230px;">
+      <h2 class="fw-bold my-4">{{ site.name }}</h2>
 
-        <div id="section-profile" class="bg-secondary text-light py-5">
-          <div class="container mt-5">
-            <img src="{{ site.avatar | relative_url }}" alt="avatar" class="rounded-circle img-fluid" style="width: 230px; height: 230px;">
-            <h2 class="fw-bold my-4">{{ site.name }}</h2>
+      <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3">
+        {% for tool in site.tools %}
+          <li class="text-dark bg-light rounded px-4 py-2">
+            {{ tool }}
+          </li>
+        {% endfor %}
+      </ul>
 
-            <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3">
-              {% for tool in site.tools %}
-                <li class="text-dark bg-light rounded px-4 py-2">
-                  {{ tool }}
-                </li>
-              {% endfor %}
-            </ul>
+      <div class="d-flex align-items-center justify-content-between my-2">
+        <hr class="flex-grow-1 me-3">
+        <i class="bi bi-stars text-primary h1"></i>
+        <hr class="flex-grow-1 ms-3">
+      </div>
 
-            <div class="d-flex align-items-center justify-content-between my-2">
-              <hr class="flex-grow-1 me-3">
-              <i class="bi bi-stars text-primary h1"></i>
-              <hr class="flex-grow-1 ms-3">
+      <p class="text-center">{{ site.introduction }}</p>
+    </div>
+  </div>
+
+  <div id="section-projects" class="py-5">
+    <div class="container mt-5 mb-2">
+      <h1 class="fw-bold mb-2">Projects</h1>
+
+      <div class="d-flex align-items-center justify-content-between my-2">
+        <hr class="flex-grow-1 me-3">
+        <i class="bi bi-star-fill text-primary h1"></i>
+        <hr class="flex-grow-1 ms-3">
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center gap-4">
+        {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+        {% for project in sorted_projects %}
+          <a href="{{ site.baseurl }}{{ project.url }}" class="project {% if forloop.index > 3 %}d-none{% endif %}">
+            <div class="d-flex flex-column shadow rounded">
+              <img src="{{ project.thumbnail | relative_url }}" class="object-fit-cover img-fluid" alt="{{ project.title }}" style="width: 24rem; height: 14rem;">
+              <h1 class="h6 my-3">{{ project.title }}</h1>
             </div>
+          </a>
+        {% endfor %}
+      </div>
 
-            <p class="text-center">{{ site.introduction }}</p>
-            </div>
-          </div>
-        </div>
+      <hr>
 
-        <div id="section-projects" class="py-5">
-          <div class="container mt-5 mb-2">
-            <h1 class="fw-bold mb-2">Projects</h1>
+      {% if site.projects.size > 3 %}
+        <button id="toggle-projects" class="btn btn-primary my-3">Show More</button>
+      {% endif %}
+    </div>
+  </div>
 
-            <div class="d-flex align-items-center justify-content-between my-2">
-              <hr class="flex-grow-1 me-3">
-              <i class="bi bi-star-fill text-primary h1"></i>
-              <hr class="flex-grow-1 ms-3">
-            </div>
+  <div id="section-social" class="bg-secondary-subtle py-5">
+    <div class="container mt-5 mb-2">
+      <h1 class="fw-bold">Social</h1>
 
-            <div class="d-flex flex-wrap justify-content-center gap-4">
-              {% assign sorted_projects = site.projects | sort: "date" | reverse %}
-              {% for project in sorted_projects %}
-                <a href="{{ site.baseurl }}{{ project.url }}" class="project {% if forloop.index > 3 %}d-none{% endif %}">
-                  <div class="d-flex flex-column shadow rounded">
-                    <img src="{{ project.thumbnail | relative_url }}" class="object-fit-cover img-fluid" alt="{{ project.title }}" style="width: 24rem; height: 14rem;">
-                    <h1 class="h6 my-3">{{ project.title }}</h1>
-                  </div>
-                </a>
-              {% endfor %}
-            </div>
+      <div class="d-flex align-items-center justify-content-between my-3">
+        <hr class="flex-grow-1 me-3">
+        <i class="bi bi-globe text-primary h1"></i>
+        <hr class="flex-grow-1 ms-3">
+      </div>
 
-            <hr>
+      <p>Below is a list of social contacts</p>
 
-            {% if site.projects.size > 3 %}
-              <button id="toggle-projects" class="btn btn-primary my-3">Show More</button>
-            {% endif %}
-          </div>
-        </div>
-
-        <div id="section-social" class="bg-secondary-subtle py-5">
-          <div class="container mt-5 mb-2">
-            <h1 class="fw-bold">Social</h1>
-
-            <div class="d-flex align-items-center justify-content-between my-3">
-              <hr class="flex-grow-1 me-3">
-              <i class="bi bi-globe text-primary h1"></i>
-              <hr class="flex-grow-1 ms-3">
-            </div>
-
-            <p>Below is a list of social contacts</p>
-
-            <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 my-5">
-              <li>
-                <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.twitter-x }}">
-                  <i class="bi bi-twitter-x me-2"></i>
-                  {{ site.social_username.twitter-x }}
-                </a>
-              </li>
-              <li>
-                <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.linkedin }}">
-                  <i class="bi bi-linkedin me-2"></i>
-                  {{ site.social_username.linkedin }}
-                </a>
-              </li>
-              <li>
-                <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.github }}">
-                  <i class="bi bi-github me-2"></i>
-                  {{ site.social_username.github}}
-                </a>
-              </li>
-              <li>
-                <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.email }}">
-                  <i class="bi bi-envelope me-2"></i>
-                  {{ site.social_username.email }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </main>
-
-      {% include footer.html %}
-  </body>
-</html>
+      <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 my-5">
+        <li>
+          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.twitter-x }}">
+            <i class="bi bi-twitter-x me-2"></i>
+            {{ site.social_username.twitter-x }}
+          </a>
+        </li>
+        <li>
+          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.linkedin }}">
+            <i class="bi bi-linkedin me-2"></i>
+            {{ site.social_username.linkedin }}
+          </a>
+        </li>
+        <li>
+          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.github }}">
+            <i class="bi bi-github me-2"></i>
+            {{ site.social_username.github}}
+          </a>
+        </li>
+        <li>
+          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.email }}">
+            <i class="bi bi-envelope me-2"></i>
+            {{ site.social_username.email }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
