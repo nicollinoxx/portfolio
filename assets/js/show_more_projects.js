@@ -1,20 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
   const toggleButton = document.getElementById('toggle-projects');
   const projects = document.querySelectorAll('.project');
+  let visibleCount = 3;
 
   toggleButton.addEventListener('click', function () {
-    const hiddenProjects = document.querySelectorAll('.project.d-none');
+    visibleCount = visibleCount >= projects.length ? 3 : visibleCount + 3;
 
-    if (hiddenProjects.length > 0) {
-      // Mostrar todos os projetos
-      projects.forEach(project => project.classList.remove('d-none'));
-      this.textContent = 'Show Less'; // Altera o texto do botão
-    } else {
-      // Ocultar todos os projetos, exceto os primeiros 3
-      projects.forEach((project, index) => {
-        if (index >= 3) project.classList.add('d-none');
-      });
-      this.textContent = 'Show More'; // Altera o texto do botão
-    }
+    projects.forEach((project, index) =>
+      project.classList.toggle('d-none', index >= visibleCount)
+    );
+
+    toggleButton.textContent = visibleCount >= projects.length ? 'Show Less' : 'Show More';
   });
 });
