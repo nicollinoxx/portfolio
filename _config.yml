@@ -1,34 +1,36 @@
 baseurl: "/portfolio"
-url: "https://nicollinoxx.github.io"
+url:     "https://nicollinoxx.github.io"
 
 #----------------------------------------------------------------------
 title:  "Portfolio"
 
-avatar: "attachments/avatar/example.jpeg" #profile picture for portfolio
-name:   "Name"
+avatar: "attachments/avatar/profile-photo.jpeg" #profile picture for portfolio
+name:   "Nícolas Amaral"
 
 #add here the technologies and tools you use
 tools:
-  - "Jekyll"
   - "Ruby"
-  - "Python"
-  - "Lua"
+  - "Ruby on Rails"
+  - "SQLite"
+  - "PostgreSQL"
   - "Bootstrap"
   - "Tailwind"
 
-introduction: "Add a stylish intro to your portfolio profile section"
+introduction: "Olá, seja bem-vindo! Este portfólio reúne alguns dos projetos que desenvolvi ao longo da minha jornada como desenvolvedor.
+              Caso queira saber mais detalhes sobre algum deles, visite meu <a href='/'>Blog</a>, onde compartilho insights,
+              experiências e um pouco do processo de desenvolvimento de cada projeto."
 
 social_username:
-  twitter-x: "twitter username"
-  linkedin:  "linkedin username"
-  email:     "email username"
-  github:    "github username"
+  twitter-x: "Nícolas"
+  linkedin:  "Nícolas Amaral"
+  email:     "nicolasalmeida321@gmail.com"
+  github:    "nicollinoxx"
 
 social_link:
-  twitter-x: "https://x.com"
-  linkedin:  "https://www.linkedin.com"
+  twitter-x: "https://x.com/nicollinoxx"
+  linkedin:  "https://www.linkedin.com/in/n%C3%ADcolas-amaral/"
   github:    "https://github.com"
-  email:     "your-email@example.com"
+  email:     nicolasalmeida321@gmail.com
 #--------------------------------------------------------------------
 
 collections:
