@@ -3,7 +3,7 @@ layout: default
 ---
 
 <style media="screen">
-  img {max-height: 350px;}
+  img,video {max-height: 370px;}
 </style>
 
 <main class="mt-5 flex-grow-1">
@@ -33,7 +33,7 @@ layout: default
     {% endif %}
 
     <div class="mb-5">
-      {{ content }}
+      {{ content | replace: "<video", "<video class=' img-fluid mx-auto d-block bg-dark'" }}
     </div>
   </div>
 </main>
