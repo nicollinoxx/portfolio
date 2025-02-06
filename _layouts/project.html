@@ -33,7 +33,11 @@ layout: default
     {% endif %}
 
     <div class="mb-5">
-      {{ content | replace: "<video", "<video class=' img-fluid mx-auto d-block bg-dark'" }}
+      {{ content
+         | replace: "<video", "<video class='img-fluid mx-auto d-block bg-dark'" 
+         | replace: "<img", "<img class='img-fluid mx-auto d-block'"
+      }}
+
     </div>
   </div>
 </main>
