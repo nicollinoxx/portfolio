@@ -10,7 +10,7 @@ layout: default
 
       <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3">
         {% for tool in site.tools %}
-          <li class="text-dark bg-light rounded px-4 py-2">
+          <li class="text-dark bg-light rounded px-4 py-1 fs-6">
             {{ tool }}
           </li>
         {% endfor %}
@@ -41,7 +41,7 @@ layout: default
         {% for project in sorted_projects %}
           <a href="{{ site.baseurl }}{{ project.url }}" class="project {% if forloop.index > 3 %}d-none{% endif %}">
             <div class="d-flex flex-column shadow-sm border rounded transition-hover" style="transition: transform .3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-              <img src="{{ project.thumbnail | relative_url }}" class="object-fit-cover img-fluid" alt="{{ project.title }}" style="width: 24rem; height: 14rem;">
+              <img src="{{ project.thumbnail | relative_url }}" class="object-fit-cover img-fluid" alt="{{ project.title }}" style="width: 21rem; height: 11rem;">
               <h1 class="h6 my-3">{{ project.title }}</h1>
             </div>
           </a>
