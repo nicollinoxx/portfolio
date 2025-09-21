@@ -3,10 +3,10 @@ layout: default
 ---
 
 <main class="text-center">
-  <div id="section-profile" class="bg-secondary text-light py-5">
+  <div id="section-profile" class="bg-dark-subtle text-light py-5">
     <div class="container mt-5">
-      <img src="{{ site.avatar | relative_url }}" alt="avatar" class="rounded-circle img-fluid" style="width: 230px; height: 230px;">
-      <h2 class="fw-bold my-4">{{ site.name }}</h2>
+      <img src="{{ site.avatar | relative_url }}" alt="avatar" class="rounded-circle img-fluid" style="width: 210px; height: 210px;">
+      <h2 class="fw-bold my-4 text-body">{{ site.name }}</h2>
 
       <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3">
         {% for tool in site.tools %}
@@ -16,13 +16,13 @@ layout: default
         {% endfor %}
       </ul>
 
-      <div class="d-flex align-items-center justify-content-between my-2">
+      <div class="d-flex align-items-center justify-content-between my-2 text-body">
         <hr class="flex-grow-1 me-3">
         <i class="bi bi-stars text-primary h1"></i>
         <hr class="flex-grow-1 ms-3">
       </div>
 
-      <p class="text-center">{{ site.introduction }}</p>
+      <p class="text-center text-body">{{ site.introduction }}</p>
     </div>
   </div>
 
@@ -40,7 +40,7 @@ layout: default
         {% assign sorted_projects = site.projects | sort: "date" | reverse %}
         {% for project in sorted_projects %}
           <a href="{{ site.baseurl }}{{ project.url }}" class="project {% if forloop.index > 3 %}d-none{% endif %}">
-            <div class="d-flex flex-column shadow rounded">
+            <div class="d-flex flex-column shadow-sm border rounded transition-hover" style="transition: transform .3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
               <img src="{{ project.thumbnail | relative_url }}" class="object-fit-cover img-fluid" alt="{{ project.title }}" style="width: 24rem; height: 14rem;">
               <h1 class="h6 my-3">{{ project.title }}</h1>
             </div>
