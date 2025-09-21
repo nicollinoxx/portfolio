@@ -13,6 +13,7 @@ tools:
   - "Ruby on Rails"
   - "SQLite"
   - "PostgreSQL"
+  - "GraphQL"
   - "Bootstrap"
   - "Tailwind"
 
@@ -28,7 +29,7 @@ social_username:
 
 social_link:
   twitter-x: "https://x.com/nicollinoxx"
-  linkedin:  "https://www.linkedin.com/in/n%C3%ADcolas-amaral/"
+  linkedin:  "https://www.linkedin.com/in/nicolas-amaral-de-almeida"
   github:    "https://github.com/nicollinoxx"
   email:     nicolasalmeida321@gmail.com
 #--------------------------------------------------------------------
