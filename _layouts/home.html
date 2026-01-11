@@ -69,30 +69,41 @@ layout: default
       <p>Below is a list of social contacts</p>
 
       <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 my-5">
-        <li>
-          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.twitter-x }}">
-            <i class="bi bi-twitter-x me-2"></i>
-            {{ site.social_username.twitter-x }}
-          </a>
-        </li>
-        <li>
-          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.linkedin }}">
-            <i class="bi bi-linkedin me-2"></i>
-            {{ site.social_username.linkedin }}
-          </a>
-        </li>
-        <li>
-          <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.github }}">
-            <i class="bi bi-github me-2"></i>
-            {{ site.social_username.github}}
-          </a>
-        </li>
-        <li>
-          <a class="text-dark bg-light shadow rounded p-2" href="mailto:{{ site.social_link.email }}" target="_blank">
-            <i class="bi bi-envelope me-2"></i>
-            {{ site.social_username.email }}
-          </a>
-        </li>
+        {% if site.social_link.twitter-x %}
+          <li>
+            <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.twitter-x }}">
+              <i class="bi bi-twitter-x me-2"></i>
+              {{ site.social_username.twitter-x }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if site.social_link.linkedin %}
+          <li>
+            <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.linkedin }}">
+              <i class="bi bi-linkedin me-2"></i>
+              {{ site.social_username.linkedin }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if site.social_link.github %}
+          <li>
+            <a class="text-dark bg-light shadow rounded p-2" href="{{ site.social_link.github }}">
+              <i class="bi bi-github me-2"></i>
+              {{ site.social_username.github }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if site.social_link.email %}
+          <li>
+            <a class="text-dark bg-light shadow rounded p-2" href="mailto:{{ site.social_link.email }}" target="_blank">
+              <i class="bi bi-envelope me-2"></i>
+              {{ site.social_username.email }}
+            </a>
+          </li>
+        {% endif %}
       </ul>
     </div>
   </div>
