@@ -11,15 +11,19 @@ name:   "Nícolas Amaral"
 tools:
   - "Ruby"
   - "Ruby on Rails"
-  - "SQLite"
   - "PostgreSQL"
   - "GraphQL"
+  - "Hotwire"
+  - "Sidekiq"
+  - "Kamal"
+  - "Docker"
   - "Bootstrap"
   - "Tailwind"
 
-introduction: "Olá, seja bem-vindo! Este portfólio reúne alguns dos projetos que desenvolvi ao longo da minha jornada como desenvolvedor.
-              Caso queira saber mais detalhes sobre algum deles, visite meu <a href='/'>Blog</a>, onde compartilho insights,
-              experiências e um pouco do processo de desenvolvimento de cada projeto."
+introduction: "Hi, welcome! This portfolio brings together some of the projects I've built throughout my journey as a
+              Full Stack Ruby on Rails developer. If you'd like to know more about any of them, visit my <a href='/'>Blog</a>,
+              where I share insights, experiences, and a bit of the development process behind each project. Smaller
+              projects live on my <a href='https://github.com/nicollinoxx'>GitHub</a>."
 
 social_username:
   linkedin:  "Nícolas Amaral"
