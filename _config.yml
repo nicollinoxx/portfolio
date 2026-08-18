@@ -12,11 +12,7 @@ tools:
   - "Ruby"
   - "Ruby on Rails"
   - "PostgreSQL"
-  - "GraphQL"
   - "Hotwire"
-  - "Sidekiq"
-  - "Kamal"
-  - "Docker"
   - "Bootstrap"
   - "Tailwind"
 
