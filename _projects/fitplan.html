@@ -1,0 +1,38 @@
+---
+layout:      project
+title:       "FitPlan"
+thumbnail:   "/attachments/projects/fitplan/thumbnail/fitplan-thumbnail.png"
+website:     https://fitplan.vip
+date:        2026-06-14 20:11:05
+tools:       [Ruby, Ruby on Rails, PostgreSQL, Hotwire, Turbo, Stimulus, "Solid Queue", "Solid Cache", "Solid Cable", Bootstrap, Kamal, Docker, Minitest, "GitHub Actions"]
+---
+
+<h2>About the project</h2>
+<p>
+  FitPlan is a modular web application for managing personalized workout and diet plans. Users can build custom
+  workout routines and meal plans, calculate <strong>BMI</strong> (Body Mass Index), <strong>BMR</strong> (Basal
+  Metabolic Rate) and per-meal calories, track their progress, and share copies of their plans with other users.
+</p>
+
+<p>
+  Built with <strong>Ruby on Rails 8</strong> and <strong>PostgreSQL</strong>, the app relies on background jobs for
+  processing and caching to keep the experience fast, with a <strong>Hotwire</strong>-powered interface for smooth,
+  reactive interactions and a responsive UI built with <strong>Bootstrap</strong>.
+</p>
+
+<div class="d-flex justify-content-center flex-nowrap gap-3 gap-md-5 my-4">
+  <figure class="text-center m-0">
+    <img src="{{ site.baseurl }}/attachments/projects/fitplan/workout-plans.png" alt="FitPlan workout plans list"
+         style="max-height: clamp(230px, 56vw, 460px); border-radius: 20px; border: 1px solid rgba(0,0,0,.1); box-shadow: 0 12px 30px rgba(0,0,0,.18);">
+    <figcaption class="text-secondary small mt-2">Workout plans</figcaption>
+  </figure>
+  <figure class="text-center m-0">
+    <img src="{{ site.baseurl }}/attachments/projects/fitplan/diet-plan.png" alt="FitPlan meal detail with macros"
+         style="max-height: clamp(230px, 56vw, 460px); border-radius: 20px; border: 1px solid rgba(0,0,0,.1); box-shadow: 0 12px 30px rgba(0,0,0,.18);">
+    <figcaption class="text-secondary small mt-2">Meal detail with macros</figcaption>
+  </figure>
+</div>
+
+<a href="https://fitplan.vip" class="btn btn-outline-primary btn-sm fw-bold mt-3">
+  Visit FitPlan
+</a>
