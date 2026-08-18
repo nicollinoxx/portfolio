@@ -1,0 +1,48 @@
+---
+layout:      project
+title:       "bgg_remote"
+thumbnail:   "/attachments/projects/bgg_remote/thumbnail/bgg_remote.png"
+website:     https://rubygems.org/gems/bgg_remote
+date:        2026-02-10 16:27:43
+tools:       [Ruby, HTTParty, Crack, RubyGems]
+---
+
+<h2>About the project</h2>
+<p>
+  bgg_remote started as a real problem during my internship at Acervo Tech. The company had an integration with the
+  BoardGameGeek (BGG) API, and at some point BGG changed its API to require authentication, breaking that
+  integration overnight. I shipped a quick fix to get Acervo back up and running.
+</p>
+
+<p>
+  Once the immediate issue was solved, I looked into the existing options in the Ruby ecosystem for talking to
+  BoardGameGeek. What I found were gems that hadn't kept up with the current API — Acervo itself had been relying on
+  one of them before it broke. That gap is what led me to build <strong>bgg_remote</strong>: a new Ruby gem for
+  BoardGameGeek integration.
+</p>
+
+<p>
+  The main goal was a simpler API, with less code and more freedom for the developer to decide how to use the
+  returned data. It works well as a thin wrapper for BGG requests, but also ships dedicated methods for common
+  resources, like <code>thing</code>, for developers who prefer a more ready-made interface. You can also skip the
+  automatic conversion done by <strong>Crack</strong> and work directly with the raw XML returned by the API — so
+  it's a choice between the convenience of automatic parsing or full access to the original XML, depending on what
+  the application needs.
+</p>
+
+<p>
+  The gem has been published on RubyGems since, and has passed nearly 3,000 downloads.
+</p>
+
+<pre class="bg-dark text-light p-3 rounded"><code>gem "bgg_remote", "~> 0.1.0"</code></pre>
+
+<p>
+  You can see it in action powering <a href="{{ site.baseurl }}/projects/boardgame-explorer.html">Boardgame Explorer</a>.
+</p>
+
+<a href="https://github.com/nicollinoxx/bgg_remote" class="btn btn-primary btn-sm mt-2">
+  View on GitHub
+</a>
+<a href="https://rubygems.org/gems/bgg_remote" class="btn btn-outline-primary btn-sm mt-2">
+  View on RubyGems
+</a>
